@@ -1,0 +1,55 @@
+.content {
+  transition: margin-left 0.3s; /* optional: smooth transition */
+}
+
+.dashboard-content {
+  margin-left: 200px;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 15px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbarlink {
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  height: 150vh;
+  position: fixed;
+  top: 110px; /* Adjusted height to account for a fixed navbar */
+  left: 0;
+  overflow: auto;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-content {
+  margin-left: 200px;
+}
