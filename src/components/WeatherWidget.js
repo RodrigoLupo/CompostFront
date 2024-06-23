@@ -68,7 +68,7 @@ const WeatherWidget = () => {
     const fetchServoMotorState = async () => {
       try {
         const servoData = await getServoMotorState();
-        setServoMotorState(servoData.state);
+        setServoMotorState(servoData.is_active); // Assuming the state is stored in 'is_active'
       } catch (error) {
         console.error('Error fetching servo motor state:', error);
       }
@@ -88,7 +88,7 @@ const WeatherWidget = () => {
   const handleServoToggle = async () => {
     try {
       const newState = !servoMotorState;
-      await updateServoMotorState({ state: newState });
+      await updateServoMotorState({ is_active: newState });
       setServoMotorState(newState);
     } catch (error) {
       console.error('Error updating servo motor state:', error);
@@ -112,7 +112,7 @@ const WeatherWidget = () => {
         <Box mt={4}>
           <Button
             variant="contained"
-            color={servoMotorState ? 'success' : 'error'}
+            style={{ backgroundColor: servoMotorState ? 'green' : 'red', color: 'white' }}
             onClick={handleServoToggle}
           >
             {servoMotorState ? 'Servo ON' : 'Servo OFF'}
